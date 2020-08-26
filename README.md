@@ -23,14 +23,19 @@ Pulled trivia questions from [Open Trivia Database](https://opentdb.com) and use
   There is no listening to changes that causes an execution of the callback. The array values just control what instance of the function is returned. 
   The array values do not control the timing of the function execution.
 
-  Wrong approach:
+  **Wrong approach:**
   useEffect(() => {
     getQuestion();
   }, [getQuestion]);
   This will result in an infinite loop of renders, because in Js if you create two fns with the same name, it will treat is as two different functions. So the getQuestion fn inside the array dependency and the getQuestion fn implementation are treated differently, and hence useEffect thinks that is a different fn and renders again and again.
   /*...*/
   }
-  So for example: const getQuestion = useCallback(() => {    ... }, [selectedCategory]) and the useEffect() would look like this: useEffect(() => {   getQuestion(); }, [getQuestion, selectedCategory]);
+  
+  **Correct Approach:** 
+  const getQuestion = useCallback(() => {    ... }, [selectedCategory]) 
+  & the useEffect() would look like this: 
+  useEffect(() => {   getQuestion(); }, [getQuestion,     selectedCategory]);
+  
   So what we are telling React is that, 'Hey getQuestion fn is not changing, so do not render it everytime the app is rendered. But only when the selectedCategory changes.
 
 
