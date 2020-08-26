@@ -12,7 +12,6 @@ Pulled trivia questions from [Open Trivia Database](https://opentdb.com) and use
 - *Sanitize Html* by using [dangerouslySetInnerHtml](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/Question.js) attribute, as we trust the API to give us non-malicious html. 
   This is done to remove the '&amp' where it should show just '&'. Similarily issue with quotes or apostrophes.
 - [Lodash shuffle](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/Question.js) fn used to shuffle the order of answers in the array.
-- Fetching data from opentdb.com API. It has a collection of questions on diverse topics.
 - When to use [useCallback](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/useTrivia.js) hook? How is it different from a useEffect hook?
   *We often see this error:*
   **'React Hook useEffect has a missing dependency: 'getQuestion'. Either include it or remove the dependency  array'.** 
