@@ -15,12 +15,12 @@ Pulled trivia questions from [Open Trivia Database](https://opentdb.com) and use
 - When to use [useCallback](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/useTrivia.js) hook? How is it different from a useEffect hook?
   *We often see this error:*
   **'React Hook useEffect has a missing dependency: 'getQuestion'. Either include it or remove the dependency  array'.** 
-  And most of the times, the solution is to implement useCallback(). 
-  useEffect has very specific timing aspects related to it. The function specified will be executed after rendering is complete and the DOM has been updated. 
-  This will happen after each rendering where any of the values specified in the second-argument array change.
-  useCallback doesn't automatically execute anything. It returns a function that can be executed by whatever code needs to trigger it. 
-  There is no listening to changes that causes an execution of the callback. The array values just control what instance of the function is returned. 
-  The array values do not control the timing of the function execution.
+And most of the times, the solution is to implement useCallback(). 
+useEffect has very specific timing aspects related to it. The function specified will be executed after rendering is complete and the DOM has been updated. 
+
+This will happen after each rendering where any of the values specified in the second-argument array change.  useCallback doesn't automatically execute anything. It returns a function that can be executed by whatever code needs to trigger it. 
+There is no listening to changes that causes an execution of the callback. The array values just control what instance of the function is returned. 
+The array values do not control the timing of the function execution.
 
   **Wrong approach:**
   useEffect(() => {
@@ -35,7 +35,8 @@ Pulled trivia questions from [Open Trivia Database](https://opentdb.com) and use
   & the useEffect() would look like this: 
   useEffect(() => {   getQuestion(); }, [getQuestion,     selectedCategory]);
   
-  So what we are telling React is that, 'Hey getQuestion fn is not changing, so do not render it everytime the app is rendered. But only when the selectedCategory changes.
+> So what we are telling React is that, 'Hey getQuestion fn is not changing, so do not render it everytime the app is rendered. But only when the > > selectedCategory changes.
+  
 
 
 
