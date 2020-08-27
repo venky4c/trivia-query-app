@@ -18,7 +18,8 @@ Pulled trivia questions from [Open Trivia Database](https://opentdb.com) and use
 And most of the times, the solution is to implement useCallback(). 
 useEffect has very specific timing aspects related to it. The function specified will be executed after rendering is complete and the DOM has been updated. 
 
-This will happen after each rendering where any of the values specified in the second-argument array change.  useCallback doesn't automatically execute anything. It returns a function that can be executed by whatever code needs to trigger it. 
+This will happen after each rendering where any of the values specified in the second-argument array change. 
+> useCallback doesn't automatically execute anything. It returns a function that can be executed by whatever code needs to trigger it. 
 There is no listening to changes that causes an execution of the callback. The array values just control what instance of the function is returned. 
 The array values do not control the timing of the function execution.
 
