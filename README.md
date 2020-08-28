@@ -9,7 +9,7 @@ Pulled trivia questions from [Open Trivia Database](https://opentdb.com) and use
 - [Custom React Hook](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/useTrivia.js) for accommodating future changes based on fresh API calls
 - [Multi Select](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/CategorySelector.js) options **added dynamically using array map fn**
 - Building array by culling answers from API call with help of [spread operator](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/Question.js)
-- *Sanitize Html* by using [dangerouslySetInnerHtml](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/Question.js) attribute, as we trust the API to give us non-malicious html. 
+- *Sanitized Html* by using [dangerouslySetInnerHtml](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/Question.js) attribute, as we trust the API to give us non-malicious html. 
   This is done to remove the '&amp' where it should show just '&'. Similarily issue with quotes or apostrophes.
 - [Lodash shuffle](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/components/Question.js) fn used to shuffle the order of answers in the array.
 - When to use [useCallback](https://github.com/venky4c/trivia-question-game/blob/master/dist/src/useTrivia.js) hook? How is it different from a useEffect hook?
@@ -37,7 +37,7 @@ The array values do not control the timing of the function execution.
   ```
   & the useEffect() would look like this: 
   ```javascript
-  useEffect(() => {   getQuestion(); }, [getQuestion,     selectedCategory]);
+  useEffect(() => {   getQuestion(); }, [getQuestion, selectedCategory]);
   ```
   
 > So what we are telling React is that, 'Hey getQuestion fn is not changing, so do not render it everytime the app is rendered. But only when the selectedCategory changes.
