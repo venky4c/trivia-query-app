@@ -23,8 +23,7 @@ This will happen after each rendering where any of the values specified in the s
 There is no listening to changes that causes an execution of the callback. The array values just control what instance of the function is returned. 
 The array values do not control the timing of the function execution.
 
-  **Wrong approach:**
-  
+  **Wrong approach:**  
   ```javascript
   useEffect(() => {
     getQuestion();
