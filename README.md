@@ -29,7 +29,7 @@ The array values do not control the timing of the function execution.
         getQuestion();
       }, [getQuestion]);
   ```
-  This will result in an infinite loop of renders, because in Js if you create two fns with the same name, it will treat is as two different functions. So the getQuestion fn inside the array dependency and the getQuestion fn implementation are treated differently, and hence useEffect thinks that it is a different fn and renders it again and again.
+  This will result in an infinite loop of renders, because in Js if you create two fns with the same name, it will treat it as two different functions. So the getQuestion fn inside the array dependency and the getQuestion fn implementation are treated differently, and hence useEffect thinks that it is a different fn and renders it again and again.
     
   **Correct Approach:** 
   ```javascript
