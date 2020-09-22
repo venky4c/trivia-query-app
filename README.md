@@ -44,7 +44,8 @@ The array values do not control the timing of the function execution.
      }, [getQuestion, selectedCategory]);
   ```
   
-> So what we are telling React is that, 'Hey getQuestion fn is not changing, so do not render it everytime the app is rendered. But only when the selectedCategory changes.
+So what we are telling React is that, 
+> 'Hey getQuestion fn is not changing, so do not render it everytime the app is rendered. But only when the selectedCategory changes.
   
 
 
